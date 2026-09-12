@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debounce Translator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Debounce Translator</h1>
+
+      <section class="controls panel">
+        <div class="field">
+          <label for="sourceLanguage">Source language</label>
+          <select id="sourceLanguage">
+            <option value="AUTO">Auto detect</option>
+            <option value="EN">English (EN)</option>
+            <option value="UK">Ukrainian (UK)</option>
+            <option value="PL">Polish (PL)</option>
+            <option value="DE">German (DE)</option>
+            <option value="FR">French (FR)</option>
+            <option value="ES">Spanish (ES)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="targetLanguage">Target language</label>
+          <select id="targetLanguage">
+            <option value="UK">Ukrainian (UK)</option>
+            <option value="EN">English (EN)</option>
+            <option value="PL">Polish (PL)</option>
+            <option value="DE">German (DE)</option>
+            <option value="FR">French (FR)</option>
+            <option value="ES">Spanish (ES)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="delayMs">Delay</label>
+          <input id="delayMs" type="number" min="0" step="50" value="500" />
+          <span>ms</span>
+        </div>
+
+        <div class="field toggle-field">
+          <label>
+            <input id="leadingToggle" type="checkbox" />
+            Leading
+          </label>
+          <label>
+            <input id="trailingToggle" type="checkbox" checked />
+            Trailing
+          </label>
+        </div>
+
+        <div class="field action-row">
+          <button id="disposeButton" type="button" class="secondary">Dispose</button>
+          <button id="resetButton" type="button">Reset</button>
+        </div>
+      </section>
+
+      <section class="layout">
+        <div class="panel input-panel">
+          <h2>Input</h2>
+          <textarea id="sourceText" rows="8" placeholder="Type here...">Hello, how are you?</textarea>
+        </div>
+
+        <div class="panel output-panel">
+          <h2>Translation</h2>
+          <div id="translationOutput" class="output-box">Waiting for input...</div>
+        </div>
+      </section>
+
+      <section class="panel stats-panel">
+        <h2>Statistics</h2>
+        <div class="stats-grid">
+          <div><span>Total calls</span><strong id="totalCalls">0</strong></div>
+          <div><span>Executions</span><strong id="executions">0</strong></div>
+          <div><span>HTTP requests</span><strong id="httpRequests">0</strong></div>
+          <div><span>Suppressed calls</span><strong id="suppressedCalls">0</strong></div>
+        </div>
+      </section>
+
+      <section class="panel log-panel">
+        <h2>Event log</h2>
+        <ul id="eventLog" class="event-log"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
