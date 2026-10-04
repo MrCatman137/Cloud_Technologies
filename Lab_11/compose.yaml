@@ -1,0 +1,26 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: lab11-redis
+    restart: always
+    networks:
+      - app-network
+
+  app:
+    image: python:3.11-alpine
+    container_name: lab11-web-app
+    restart: always
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: sh -c "pip install --no-cache-dir flask redis && python app.py"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
