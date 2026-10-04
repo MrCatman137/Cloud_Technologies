@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab13-web-deployment
+  namespace: default
+  labels:
+    app: lab13-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lab13-web
+  template:
+    metadata:
+      labels:
+        app: lab13-web
+    spec:
+      containers:
+      - name: web-container
+        image: volodymyr137/web-app:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
