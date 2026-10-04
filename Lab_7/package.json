@@ -1,0 +1,15 @@
+{
+  "name": "lab-7-fanout",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "demo": "tsx fanOut-demo.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.20.0",
+    "typescript": "^5.7.2"
+  }
+}
