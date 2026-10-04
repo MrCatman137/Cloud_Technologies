@@ -1,0 +1,22 @@
+{
+  "name": "custom-future-typescript",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Educational from-scratch Future/Promise pattern in TypeScript",
+  "main": "dist/src/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/server.js",
+    "dev": "tsx src/server.ts",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^24.0.0",
+    "jest": "^29.7.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "ts-jest": "^29.4.5"
+  }
+}
